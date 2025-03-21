@@ -414,10 +414,10 @@ img {
 
 .work__container {
   display: flex;
-  justify-content: space-evenly; /* Even spacing between cards */
-  align-items: stretch; /* Ensures all cards have the same height */
+  justify-content: space-evenly;
+  align-items: stretch;
   flex-wrap: wrap; /* Allows wrapping for smaller screens */
-  gap: 1.5rem; /* Adds space between cards */
+  gap: 1.5rem;
 }
 
 .card {
@@ -463,18 +463,12 @@ img {
   margin-bottom: 8px;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1024px) {
-  .work__container {
-      flex-direction: column;
-      align-items: center;
-  }
-
+/* Optional: Adjust media query for very small screens */
+@media screen and (max-width: 768px) { /* Adjust breakpoint as needed */
   .card {
-      width: 80%; /* Stack cards on smaller screens */
+      width: 100%; /* Stack cards on very small screens */
   }
 }
-
 
 /* ===== CONTACT =====*/
 .contact__input {
