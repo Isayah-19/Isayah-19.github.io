@@ -56,12 +56,37 @@
 }
 
 
+/* Base Styles (Default for Smallest Screens) */
+:root {
+  --big-font-size: 2.5rem; /* Default for mobile */
+  --h2-font-size: 1.5rem; /* Default for mobile */
+  --normal-font-size: 0.9rem; /* Default for mobile */
+  --smaller-font-size: 0.8rem; /* Default for mobile */
+}
+
+/* Media Query for Tablets (e.g., 601px - 967px) */
+@media screen and (min-width: 601px) and (max-width: 967px) {
+  :root {
+    --big-font-size: 3rem;
+    --h2-font-size: 1.8rem;
+    --normal-font-size: 0.95rem;
+    --smaller-font-size: 0.85rem;
+  }
+}
+
+/* Media Query for Desktop (e.g., 968px and above) */
 @media screen and (min-width: 968px) {
   :root {
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
     --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
+    --smaller-font-size: 0.875rem;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 967px) {
+  .container{
+    width: 95%;
   }
 }
 
