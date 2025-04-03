@@ -401,6 +401,99 @@ img {
   margin-top: 10px;
 }
 
+
+/* ===== Experience =====*/
+/* Experience Section Styling */
+.experience-section {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.experience-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Container for experience cards */
+.experience-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Individual Experience Card */
+.experience-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-company {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.experience-link {
+  text-decoration: none;
+  color: #0a58ca;
+  font-weight: bold;
+}
+
+.experience-date {
+  font-size: 1rem;
+  color: #777;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.experience-role {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #444;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Experience List */
+.experience-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.experience-list li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Hover effect */
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .experience-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-container {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
 /* ===== projects =====*/
 
 /* Work Section Styling */
