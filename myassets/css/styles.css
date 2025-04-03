@@ -657,42 +657,83 @@ img {
 
 
 /* ===== WORK =====*/
-
-
-.certifications-container {
-  display: flex;
-  justify-content: space-evenly; /* Ensures even spacing */
-  align-items: center;
-  flex-wrap: wrap; /* Makes it responsive */
-  gap: 1rem; /* Adds space between items */
-}
-
-.cert-item {
-  width: 30%; /* Ensures equal width */
+/* Certifications Section */
+.certifications-section {
+  padding: 2rem;
   text-align: center;
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-  border-radius: 0.5rem;
-  padding: 1rem;
+  background-color: #f9f9f9;
 }
 
-.cert-item img {
-  width: 100%; /* Makes images responsive */
-  max-width: 200px; /* Prevents images from being too large */
+.certifications-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid for Certification Cards */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Individual Certification Card */
+.cert-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-image {
+  width: 100%;
+  max-width: 200px;
   transition: transform 0.3s ease-in-out;
+  border-radius: 5px;
 }
 
-.cert-item img:hover {
+.cert-image:hover {
   transform: scale(1.1);
 }
 
-.cert-title {
+.cert-name {
   font-weight: bold;
   margin-top: 10px;
+}
+
+.cert-link {
+  text-decoration: none;
+  color: #0a58ca;
+  font-weight: bold;
 }
 
 .cert-date {
   font-size: 14px;
   color: gray;
+  margin-top: 5px;
+}
+
+/* Hover effect */
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .certifications-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications-grid {
+      grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .work__container {
