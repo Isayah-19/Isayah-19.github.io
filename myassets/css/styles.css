@@ -151,7 +151,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .award__img img {
-    width: 150px; /* Adjust size as needed */
+    width: 200px; /* Adjust size as needed */
     height: 150px;
     object-fit: cover;
     border-radius: .5rem;
