@@ -48,18 +48,41 @@ let swiperProjects = new Swiper(".projects__container", {
     loop: true,
     spaceBetween: 24,
     grabCursor: true,
+    
+    // This helps if the slider initializes before the page is fully styled
+    observer: true,
+    observeParents: true,
+
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+        dynamicBullets: true, // Makes dots look cleaner
     },
+
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+
+    // Setting a default first
+    slidesPerView: 1,
+
     breakpoints: {
-        320: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
+        // Mobile: 1 slide
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        // Tablet: 2 slides
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+        },
+        // Desktop: 3 slides
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
     },
 });
 
