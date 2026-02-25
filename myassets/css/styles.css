@@ -139,57 +139,109 @@ img { max-width: 100%; height: auto; display: block; }
 .experience__list li::before { content: '→'; position: absolute; left: 0; color: var(--first-color); }
 
 /*===== AWARDS CUSTOMIZATION =====*/
+/*===== AWARDS ENHANCED STYLING =====*/
+.awards__container {
+    padding-bottom: 2rem;
+}
+
 .award__card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    padding: 2rem;
+    gap: 2rem;
+    padding: 2.5rem;
     background-color: var(--container-bg);
-    border-radius: .75rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 1rem;
+    /* Deeper shadow for a "lifted" effect */
+    box-shadow: 0 10px 30px rgba(12, 43, 22, 0.1); 
+    border: 1px solid rgba(23, 101, 48, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.award__card:hover {
+    transform: translateY(-5px);
+}
+
+.award__img {
+    flex-shrink: 0; /* Prevents image from shrinking */
 }
 
 .award__img img {
-    width: 200px; /* Adjust size as needed */
-    height: 150px;
+    /* Increased size and changed to a professional portrait ratio */
+    width: 280px; 
+    height: 380px;
     object-fit: cover;
-    border-radius: .5rem;
-    border: 3px solid var(--first-color);
+    border-radius: 0.75rem;
+    /* Double border effect for a "framed" look */
+    border: 5px solid var(--first-color);
+    outline: 2px solid var(--first-color-alt);
+    outline-offset: -10px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .award__content {
     text-align: center;
+    max-width: 600px;
 }
 
 .award__title {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--first-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
 }
 
 .award__company {
-    font-weight: var(--font-semi);
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--second-color);
-    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
 }
 
-/* Responsive Desktop Layout for Awards */
+.award__text {
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    line-height: 1.8;
+    position: relative;
+    padding: 0 1rem;
+}
+
+/* Responsive Desktop Layout */
 @media screen and (min-width: 768px) {
     .award__card {
-        flex-direction: row; /* Puts image and text side-by-side */
+        flex-direction: row; /* Image and text side-by-side */
         text-align: left;
-        padding: 3rem;
+        padding: 4rem;
+        align-items: flex-start;
     }
 
     .award__content {
         text-align: left;
+        padding-top: 1rem;
     }
 
     .award__img img {
-        width: 200px;
-        height: 200px;
+        width: 320px;
+        height: 420px;
+    }
+
+    /* Decorative quote element */
+    .award__text::before {
+        content: '"';
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        font-size: 3rem;
+        color: var(--first-color);
+        opacity: 0.2;
+        font-family: serif;
     }
 }
+
 
 /*===== PROJECTS SLIDER =====*/
 .projects__container {
