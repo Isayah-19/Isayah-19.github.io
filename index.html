@@ -1,396 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaya Web Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="myassets/css/styles.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#home" class="nav__logo">Isaya Onyango Opiyo</a>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
 
-        <link rel="stylesheet" href="myassets/css/styles.css">
-
-        <!-- =====BOX ICONS===== -->
-        <!--<link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>-->
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <title> Isaya Web Portfolio</title>
-    </head>
-    <body>
-       
-        <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#home" class="nav__logo">Isaya Onyango Opiyo</a>
+    <main class="l-main">
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Isaya Onyango Opiyo</span><br>Data Analyst</h1>
+                <div class="home__buttons">
+                    <a href="#contact" class="button">Contact</a>
+                    <a href="https://1drv.ms/f/c/c5960f1537e50553/EhSBsf4wMQdPhzEjCgXOXcYBmlHrJSpZufIRrKa3kW-pfA?e=uGrEH5" class="button button--ghost">Download Resume</a>
                 </div>
+            </div>
+            <div class="home__social">
+                <a href="https://www.linkedin.com/in/isaya-opiyo-b4337a224" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://x.com/becoming_20" class="home__social-icon"><i class='bx bxl-twitter'></i></a>
+                <a href="https://github.com/Isayah-19/" class="home__social-icon"><i class='bx bxl-github'></i></a>
+            </div>
+        </section>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#edu" class="nav__link active">Education</a></li>
-                        <li class="nav__item"><a href="#exp" class="nav__link active">Experience</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        <section class="about section" id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="myassets/img/isaya.jpg" alt="Isaya Opiyo">
+                </div>
+                <div>
+                    <p class="about__text">
+                        Hi I'm Isaya, a data analyst skilled in transforming complex data into actionable insights. With experience in Power BI, MySQL, and Python, I specialize in building dashboards and analyzing financial data to drive business success.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills__container bd-grid">
+                <div class="skills__data">
+                    <i class='bx bxs-spreadsheet skills__icon'></i>
+                    <span class="skills__name">MS Excel</span>
+                </div>
+                <div class="skills__data">
+                    <i class='bx bxs-bar-chart-alt-2 skills__icon'></i>
+                    <span class="skills__name">Power BI</span>
+                </div>
+                <div class="skills__data">
+                    <i class='bx bxl-python skills__icon'></i>
+                    <span class="skills__name">Python</span>
+                </div>
+                <div class="skills__data">
+                    <i class='bx bxs-data skills__icon'></i>
+                    <span class="skills__name">MySQL</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications section" id="certifications">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications__container bd-grid">
+                <div class="cert-card">
+                    <img src="myassets/img/sharing.jpg" alt="Sharing Is Caring">
+                    <h3 class="cert-name">Sharing Is Caring</h3>
+                    <p class="cert-date">December 2025</p>
+                    <a href="https://www.credly.com/badges/8835115d-744b-47f2-bc3e-c8fe10c2307c/public_url" class="button button--small">View Badge</a>
+                </div>
+                <div class="cert-card">
+                    <img src="myassets/img/community.png" alt="Community Contributor">
+                    <h3 class="cert-name">Community Contributor</h3>
+                    <p class="cert-date">December 2025</p>
+                    <a href="https://www.credly.com/badges/dc2015b0-70d3-44f4-adfd-022e4b64ec92/public_url" class="button button--small">View Badge</a>
+                </div>
+                <div class="cert-card">
+                    <img src="myassets/img/Community Contributor.png" alt="Community Contributor">
+                    <h3 class="cert-name">Community Contributor</h3>
+                    <p class="cert-date">September 2024</p>
+                    <a href="https://www.credly.com/badges/7b40eb6c-2997-4cfa-9dd5-17b6fcf32735/public_url" class="button button--small">View Badge</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience section" id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience__container bd-grid">
+                <div class="experience__card">
+                    <h3 class="experience__company">Rentokil Initial</h3>
+                    <span class="experience__date">Nov 2024 - Present</span>
+                    <ul class="experience__list">
+                        <li>Analyze ledger movements using Power BI.</li>
+                        <li>Conduct data reconciliation across multiple sheets ensuring matched debtor accounts.</li>
+                        <li>Design dashboards to provide insights into AR performance.</li>
                     </ul>
                 </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
+                <div class="experience__card">
+                    <h3 class="experience__company">Cedar Clink Hardware</h3>
+                    <span class="experience__date">Aug 2024 - Oct 2024</span>
+                    <p class="experience__role">Data Analyst Intern</p>
+                    <ul class="experience__list">
+                        <li>Collect, analyze, and manage sales data using MS Excel.</li>
+                        <li>Develop and maintain Power BI dashboards for business insights.</li>
+                        <li>Assist in data cleaning, validation, and accuracy checks.</li>
+                    </ul>
                 </div>
-            </nav>
-        </header>
-
-        <main class="l-main" >
-            <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Isaya Onyango Opiyo</span> <br/>Data Analyst
-                        </h1>
-                        <h1 class="home__title-color"></h1>
-
-                    <a href="#contact" class="button">Contact</a>
-                    <a href="https://1drv.ms/f/c/c5960f1537e50553/EhSBsf4wMQdPhzEjCgXOXcYBmlHrJSpZufIRrKa3kW-pfA?e=uGrEH5" class="button">Download Resume</a>
-                </div>
-
-                <div class="home__social">
-                    <a href="https://www.linkedin.com/in/isaya-opiyo-b4337a224?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://x.com/becoming_20?t=ggaLj41bv-FJty-SuzpS_w&s=08" class="home__social-icon"><i class='bx bxl-twitter' ></i></a>
-                    <a href="https://github.com/Isayah-19/" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                </div>
-
-               
-            </section>
-
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About Me</h2>
-
-                <div class="about__container bd-grid">
-                    <div class="about__img ">
-                        <img src="myassets/img/isaya.jpg" alt="">
-                    </div>
-                    
-                    <div>
-                        <p class="about__text">Hi I'm Isaya, a data analyst skilled in transforming complex data into actionable insights. With experience in Power BI, MySQL, and Python, I specialize in building dashboards, analyzing financial data, and streamlining processes to enhance decision-making.
-                       I have worked with accounts receivable data and business intelligence, identifying trends, improving reporting systems, and driving efficiency. I thrive in problem-solving and collaboration, always seeking innovative ways to turn data into value.<br>
-                    I am open to opportunities where I can apply my analytical expertise to drive business success. Let’s connect!.</p>           
-                    </div>                                   
-                </div>
-            </section>
-
-            <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
-        
-                    <div class="skills__container bd-grid">
-                      <!--  <h2 class="skills__subtitle">Profesional Skills</h2>-->
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxs-spreadsheet skills__icon'></i>
-                                <span class="skills__name">Ms Excel</span>
-                            </div>
-                           <!-- <div class="skills__bar skills__html"></div>
-                            <div><span class="skills__percentage">87%</span></div>-->
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxs-bar-chart-alt-2 skills__icon'></i>
-                                <span class="skills__name">Power BI</span>
-                            </div>
-                           <!-- <div class="skills__bar skills__css"></div>
-                            <div><span class="skills__percentage">83%</span></div>-->
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-python skills__icon'></i>
-                                <span class="skills__name">Python</span>
-                            </div>
-                           <!-- <div class="skills__bar skills__js"></div>
-                            <div><span class="skills__percentage">65%</span></div>-->
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxs-data skills__icon'></i>
-                                <span class="skills__name">MySQL</span>
-                            </div>
-                           <!-- <div class="skills__bar skills__js"></div>
-                            <div><span class="skills__percentage">78%</span></div>-->
-                        </div>
-                    </div>
-            </section>
-            <!--===== WORK =====-->
-            <section class="certifications-section" id="certifications">
-                <h2 class="certifications-title">Certifications</h2>
-            
-                <div class="certifications-grid">
-                    <div class="cert-card">
-                        <img src="myassets/img/sharing.jpg" alt="Sharing Is Caring">
-                        <p class="cert-name">
-                            <a href="https://www.credly.com/badges/8835115d-744b-47f2-bc3e-c8fe10c2307c/public_url">
-                                Sharing Is Caring
-                            </a>
-                        </p>
-                        <p class="cert-date">December 2025</p>
-                    </div>
-            
-                    <div class="cert-card">
-                        <img src="myassets/img/community.png" alt="Community Contributor">
-                        <p class="cert-name">
-                            <a href="https://www.credly.com/badges/dc2015b0-70d3-44f4-adfd-022e4b64ec92/public_url">
-                                Community Contributor
-                            </a>
-                        </p>
-                        <p class="cert-date">December 2025</p>
-                    </div>
-            
-                    <div class="cert-card">
-                        <img src="myassets/img/Community Contributor.png" alt="Community Contributor">
-                        <p class="cert-name">
-                            <a href="https://www.credly.com/badges/7b40eb6c-2997-4cfa-9dd5-17b6fcf32735/public_url">
-                                Community Contributor
-                            </a>
-                        </p>
-                        <p class="cert-date">September 2024</p>
-                    </div>
-                </div>
-            </section>
-            
-            
-            
-
-            <section class="experience-section" id="experience">
-                <h2 class="experience-title">Experience</h2>
-            
-                <div class="experience-container">
-                    <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="experience-company">
-                            <a href="https://www.rentokil.co.ke/" class="experience-link">Rentokil Initial</a>
-                        </h4>
-                        <h5 class="experience-date">Nov 2024 - Present</h5>
-                        <ul class="experience-list">
-                            <li>Analyze ledger movements of various accounts using Power BI.</li>
-                            <li>Conduct data reconciliation across multiple sheets, ensuring accuracy and promptly updating Credit Controllers with matched debtor accounts.</li>
-                            <li>Design and implement Power BI dashboards to provide insights into AR performance.</li>
-                            <li>Support Credit Controllers by maintaining and organizing a comprehensive Credit Controller Tracker.</li>
-                        </ul>
-                    </div>
-            
-                    <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="experience-company">
-                            <a href="https://www.asu.edu/" class="experience-link">Cedar Clink Hardware</a>
-                        </h4>
-                        <h5 class="experience-date">Aug 2024 - Oct 2024</h5>
-                        <p class="experience-role">Data Analyst Intern</p>
-                        <ul class="experience-list">
-                            <li>Collect, analyze, and manage sales data using Microsoft Excel.</li>
-                            <li>Develop and maintain Power BI dashboards to provide business insights.</li>
-                            <li>Monitor KPIs and identify trends for actionable insights.</li>
-                            <li>Assist in data cleaning, validation, and ensuring data accuracy.</li>
-                        </ul>
-                    </div>
-            
-                    <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="experience-company">
-                            <a href="https://www.asu.edu/" class="experience-link">Direct IT</a>
-                        </h4>
-                        <h5 class="experience-date">May 2023 - July 2023</h5>
-                        <p class="experience-role">External Attachment</p>
-                        <ul class="experience-list">
-                            <li>Design and implementation of websites.</li>
-                            <li>WordPress theme customization.</li>
-                            <li>E-commerce integration.</li>
-                            <li>Google API integration.</li>
-                            <li>User experience (UX) enhancement.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <!--===== Awards & Recognition =====-->
-			<section class="awards-section" id="awards">
-			    <h2 class="awards-title">Awards & Recognition</h2>
-			
-			    <div class="awards-container">
-			        <div class="award-card" data-aos="fade-up" data-aos-delay="100">
-			            
-			            <div class="award-image">
-			                <img src="myassets/img/award.jpeg" alt="Employee of Q4 2025 Award">
-			            </div>
-			
-			            <div class="award-content">
-			                <h4 class="award-company">
-			                    <a href="https://www.rentokil.co.ke/" class="award-link">Rentokil Initial</a>
-			                </h4>
-			
-			                <h5 class="award-title">Employee of the Quarter – Q4 2025</h5>
-			                <p class="award-date">Awarded: February 2026</p>
-			
-			                <p class="award-description">
-			                    Recognized for outstanding performance in reporting and data analysis during Q4 2025. 
-			                    Successfully assumed managerial reporting responsibilities following the unfortunate passing of my manager, 
-			                    ensuring continuity in financial reporting, data reconciliation, and Power BI dashboard delivery.
-			                </p>
-			
-			                <ul class="award-highlights">
-			                    <li>Maintained full reporting operations without disruption.</li>
-			                    <li>Delivered executive-level Power BI insights for Accounts Receivable performance.</li>
-			                    <li>Led reconciliation processes and supported Credit Controllers with high data accuracy.</li>
-			                    <li>Demonstrated leadership, accountability, and operational resilience under challenging circumstances.</li>
-			                </ul>
-			            </div>
-			
-			        </div>
-			    </div>
-			</section>
-
-            
-            <!--===== Projects ===== -->
-            <section class="projects-section" id="work">
-                <h2 class="projects-title">Dashboards & M365 Contributions</h2>
-            
-                <div class="projects-container">
-                    <a href="https://github.com/Isayah-19/HR-Performance-Dashboard" class="project-card">
-                        <img src="myassets/img/hrdashboard.png" alt="HR Dashboard">
-                        <p class="project-title">HR Dashboard</p>
-                    </a>
-                    <a href="https://github.com/Isayah-19/Sales-and-Profit-Dashboard" class="project-card">
-                        <img src="myassets/img/octobercedar.png" alt="Sales Analysis Dashboard">
-                        <p class="project-title">Sales Analysis Dashboard</p>
-                    </a>
-                    <a href="https://pnp.github.io/blog/post/onedrive-vs-sharepoint-how-to-always-know-where-to-save-your-files-in-microsoft-365/" class="project-card">
-                        <img src="myassets/img/onedrive.jpg" alt="OneDrive vs SharePoint">
-                        <p class="project-title">OneDrive vs SharePoint</p>
-                    </a>
-                </div>
-            </section>
-            
-
-            <!--===== CONTACT =====-->
-            <section class="ftco-section" id="contact">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-6 text-center mb-5">
-                            <h2 class="heading-section">Contact Form</h2>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-md-12">
-                            <div class="wrapper">
-                                <div class="row mb-5">
-                                    <div class="col-md-3">
-                                        <div class="dbox w-100 text-center">
-                                    <div class="icon d-flex align-items-center justify-content-center">
-                                        <span class="fa fa-map-marker"></span>
-                                    </div>
-                                    <div class="text">
-                                    <p><span>Address:</span> Nairobi, Kenya</p>
-                                  </div>
-                              </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="dbox w-100 text-center">
-                                    <div class="icon d-flex align-items-center justify-content-center">
-                                        <span class="fa fa-phone"></span>
-                                    </div>
-                                    <div class="text">
-                                    <p><span>Phone:</span> <a href="tel://1234567920">+254114 097 640</a></p>
-                                  </div>
-                              </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="dbox w-100 text-center">
-                                    <div class="icon d-flex align-items-center justify-content-center">
-                                        <span class="fa fa-paper-plane"></span>
-                                    </div>
-                                    <div class="text">
-                                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">isayahopiyo807@gmail.com</a></p>
-                                  </div>
-                              </div>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters">
-                                    <div class="col-md-7">
-                                        <div class="contact-wrap w-100 p-md-5 p-4">
-                                            <h3 class="mb-4">Contact Us</h3>
-                                            <div id="form-message-warning" class="mb-4"></div> 
-                                      <div id="form-message-success" class="mb-4">
-                                    Your message was sent, thank you!
-                                      </div>
-                                            <form method="POST" id="contactForm" name="contactForm" class="contactForm">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label class="label" for="name">Full Name</label>
-                                                            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6"> 
-                                                        <div class="form-group">
-                                                            <label class="label" for="email">Email Address</label>
-                                                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="label" for="subject">Subject</label>
-                                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="label" for="#">Message</label>
-                                                            <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <input type="submit" value="Send Message" class="btn btn-primary">
-                                                            <div class="submitting"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5 d-flex align-items-stretch">
-                                        <div class="info-wrap w-100 p-5 img" style="background-image: url(myassets/img/img.jpg);">
-                              </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-        </main>
-
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">Isaya Onyango Opiyo</p>
-            <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
             </div>
-            <p class="footer__copy">&#169; 2025. All rigths reserved</p>
-        </footer>
+        </section>
 
+        <section class="awards section" id="awards">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards__container bd-grid">
+                <div class="award__card">
+                    <div class="award__content">
+                        <h3 class="award__title">Employee of the Quarter – Q4 2025</h3>
+                        <p class="award__company">Rentokil Initial</p>
+                        <p class="award__text">Recognized for outstanding performance in reporting and data analysis during Q4 2025. Successfully assumed managerial reporting responsibilities, ensuring continuity under challenging circumstances.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+        <section class="projects section" id="work">
+            <h2 class="section-title">Projects & Contributions</h2>
+            <div class="projects__container bd-grid swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="https://github.com/Isayah-19/HR-Performance-Dashboard" class="project__card">
+                            <img src="myassets/img/hrdashboard.png" alt="HR Dashboard">
+                            <span class="project__title">HR Dashboard</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://github.com/Isayah-19/Sales-and-Profit-Dashboard" class="project__card">
+                            <img src="myassets/img/octobercedar.png" alt="Sales Analysis">
+                            <span class="project__title">Sales Analysis Dashboard</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://pnp.github.io/blog/post/onedrive-vs-sharepoint-how-to-always-know-where-to-save-your-files-in-microsoft-365/" class="project__card">
+                            <img src="myassets/img/onedrive.jpg" alt="OneDrive vs SharePoint">
+                            <span class="project__title">OneDrive vs SharePoint Blog</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact__container bd-grid">
+                <div class="contact__info">
+                    <div class="contact__box">
+                        <i class='bx bx-map contact__icon'></i>
+                        <h3 class="contact__subtitle">Address</h3>
+                        <span class="contact__text">Nairobi, Kenya</span>
+                    </div>
+                    <div class="contact__box">
+                        <i class='bx bx-mail-send contact__icon'></i>
+                        <h3 class="contact__subtitle">Email</h3>
+                        <span class="contact__text">isayahopiyo807@gmail.com</span>
+                    </div>
+                </div>
 
-        <!--===== MAIN JS =====-->
-        <script src="myassets/js/main.js"></script>
+                <form action="" class="contact__form">
+                    <div class="contact__inputs">
+                        <input type="text" placeholder="Name" class="contact__input">
+                        <input type="email" placeholder="Email" class="contact__input">
+                    </div>
+                    <input type="text" placeholder="Subject" class="contact__input">
+                    <textarea cols="0" rows="7" placeholder="Message" class="contact__input"></textarea>
+                    <input type="submit" value="Send Message" class="button contact__button">
+                </form>
+            </div>
+        </section>
+    </main>
 
-        <script src="myassets/js/jquery.min.js"></script>
-        <script src="myassets/js/popper.js"></script>
-        <script src="myassets/js/bootstrap.min.js"></script>
-        <script src="myassets/js/jquery.validate.min.js"></script>
+    <footer class="footer">
+        <p class="footer__title">Isaya O. Opiyo</p>
+        <div class="footer__social">
+            <a href="#" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
+            <a href="#" class="footer__icon"><i class='bx bxl-github'></i></a>
+            <a href="#" class="footer__icon"><i class='bx bxl-twitter'></i></a>
+        </div>
+        <p class="footer__copy">&#169; 2026. All rights reserved</p>
+    </footer>
 
-      
-    </body>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="myassets/js/main.js"></script>
+</body>
 </html>
