@@ -120,7 +120,7 @@ img { max-width: 100%; height: auto; display: block; }
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
-.skills__data, .cert-card, .experience__card, .award__card, .project__card {
+.skills__data, .cert-card, .experience__card, .project__card {
   background-color: var(--container-bg); padding: 1.5rem;
   border-radius: .75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   transition: .3s; text-align: center;
@@ -138,10 +138,81 @@ img { max-width: 100%; height: auto; display: block; }
 .experience__list li { font-size: .9rem; margin-bottom: .5rem; padding-left: 1rem; position: relative; }
 .experience__list li::before { content: '→'; position: absolute; left: 0; color: var(--first-color); }
 
+/*===== AWARDS CUSTOMIZATION =====*/
+.award__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--container-bg);
+    border-radius: .75rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.award__img img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px;
+    object-fit: cover;
+    border-radius: .5rem;
+    border: 3px solid var(--first-color);
+}
+
+.award__content {
+    text-align: center;
+}
+
+.award__title {
+    color: var(--first-color);
+    margin-bottom: 0.5rem;
+}
+
+.award__company {
+    font-weight: var(--font-semi);
+    color: var(--second-color);
+    margin-bottom: 1rem;
+}
+
+/* Responsive Desktop Layout for Awards */
+@media screen and (min-width: 768px) {
+    .award__card {
+        flex-direction: row; /* Puts image and text side-by-side */
+        text-align: left;
+        padding: 3rem;
+    }
+
+    .award__content {
+        text-align: left;
+    }
+
+    .award__img img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
 /*===== PROJECTS SLIDER =====*/
-.projects__container { padding: 1rem 0 4rem; overflow: hidden; position: relative; }
-.swiper-slide { padding: 10px; display: flex; justify-content: center; }
-.project__card { width: 100%; }
+.projects__container {
+    max-width: 1024px; /* Manually adding the grid width here */
+    margin: 0 auto;
+    padding: 1rem 0 4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.swiper-slide {
+    /* Critical: Ensure slides have a defined height and don't collapse */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.project__card {
+    width: 100%;
+    /* Ensure the card is treated as a block to fill the slide */
+    display: block; 
+}
 .project__card img { border-radius: .5rem; margin-bottom: 1rem; height: 180px; object-fit: cover; }
 .swiper-button-prev, .swiper-button-next {
     color: var(--first-color) !important; background: #fff;
