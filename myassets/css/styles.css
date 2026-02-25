@@ -115,6 +115,50 @@ img { max-width: 100%; height: auto; display: block; }
 .home__social-icon { font-size: 1.5rem; color: var(--first-color); }
 .home__social-icon:hover { transform: translateY(-3px); }
 
+/*===== ABOUT ENHANCED =====*/
+.about__container {
+    row-gap: 2rem;
+    text-align: center;
+}
+
+.about__img {
+    justify-self: center;
+}
+
+.about__img img {
+    width: 240px; /* Reduced width from previous versions */
+    border-radius: .75rem;
+    box-shadow: 0 4px 12px rgba(23, 101, 48, 0.2);
+    /* Soft border to match the award section style */
+    border: 3px solid var(--first-color);
+}
+
+.about__text {
+    font-size: 1.05rem; /* Slightly larger for readability */
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* Responsive adjustment for Desktop */
+@media screen and (min-width: 768px) {
+    .about__container {
+        /* Gives the text 60% of the space and image 40% */
+        grid-template-columns: 0.8fr 1.2fr; 
+        column-gap: 5rem;
+        text-align: initial;
+        align-items: center;
+        padding-top: 2rem;
+    }
+
+    .about__img img {
+        width: 320px; /* Controlled size for large screens */
+    }
+
+    .about__text {
+        font-size: 1.1rem; /* Clearer hierarchy against the image */
+    }
+}
+
 /*===== CARDS (General) =====*/
 .skills__container, .certifications__container, .experience__container {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -297,14 +341,103 @@ img { max-width: 100%; height: auto; display: block; }
 .swiper-pagination-bullet-active { background: var(--first-color) !important; }
 
 /*===== CONTACT =====*/
-.contact__container { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.contact__box { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-.contact__icon { font-size: 1.5rem; color: var(--first-color); }
-.contact__input {
-  width: 100%; padding: 1rem; border-radius: .5rem;
-  border: 1px solid #ddd; margin-bottom: 1rem; outline: none; font-family: inherit;
+/*===== CONTACT ENHANCED =====*/
+.contact__container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem; /* Increased gap for a cleaner look */
+    align-items: start;
 }
-.contact__input:focus { border-color: var(--first-color); }
+
+.contact__info {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact__box {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background-color: var(--container-bg);
+    border-radius: .75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lift effect on contact info boxes */
+.contact__box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(23, 101, 48, 0.1);
+}
+
+.contact__icon {
+    font-size: 2rem; /* Larger icon */
+    color: var(--first-color);
+    background-color: var(--body-bg);
+    padding: .75rem;
+    border-radius: 50%;
+}
+
+.contact__subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--second-color);
+    margin-bottom: 0.25rem;
+}
+
+.contact__text {
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+}
+
+/* Form Styling */
+.contact__form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact__inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.contact__input {
+    width: 100%;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: var(--normal-font-size);
+    background-color: var(--container-bg);
+    border: 2px solid transparent; /* Hidden border by default */
+    border-radius: .5rem;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Subtle border on un-focused inputs to give shape */
+.contact__input:not(:focus) {
+    border-color: #eee;
+}
+
+/* High-contrast focus state for better UX */
+.contact__input:focus {
+    border-color: var(--first-color);
+    box-shadow: 0 4px 12px rgba(23, 101, 48, 0.15);
+    background-color: #fff;
+}
+
+/* Special styling for the textarea */
+textarea.contact__input {
+    resize: none;
+}
+
+/* Responsive adjustment for small phones */
+@media screen and (max-width: 480px) {
+    .contact__inputs {
+        grid-template-columns: 1fr;
+    }
+}
 
 /*===== FOOTER =====*/
 .footer { background-color: var(--second-color); color: #fff; text-align: center; padding: 3rem 0; }
