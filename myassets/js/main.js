@@ -1,22 +1,21 @@
-/*===== MENU SHOW =====*/ 
-const showMenu = (toggleId, navId) =>{
+/*==================== MENU SHOW Y HIDDEN ====================*/
+const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+          nav = document.getElementById(navId)
 
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
+    if (toggle && nav) {
+        toggle.addEventListener('click', () => {
             nav.classList.toggle('show')
         })
     }
 }
-showMenu('nav-toggle','nav-menu')
+showMenu('nav-toggle', 'nav-menu')
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
 
-function linkAction(){
+function linkAction() {
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
@@ -24,121 +23,92 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
-function scrollActive(){
+function scrollActive() {
     const scrollY = window.pageYOffset
 
-    sections.forEach(current =>{
+    sections.forEach(current => {
         const sectionHeight = current.offsetHeight
-        const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
+        const sectionTop = current.offsetTop - 58
+        const sectionId = current.getAttribute('id')
+        const navItem = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
+        if (navItem) {
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navItem.classList.add('active')
+            } else {
+                navItem.classList.remove('active')
+            }
         }
     })
 }
 window.addEventListener('scroll', scrollActive)
 
-/*===== SCROLL REVEAL ANIMATION =====*/
+/*==================== PROJECT SLIDER (SWIPER) ====================*/
+let swiperProjects = new Swiper(".projects__container", {
+    loop: true,
+    spaceBetween: 24,
+    grabCursor: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        320: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+    },
+});
+
+/*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
     duration: 2000,
     delay: 200,
-//     reset: true
 });
 
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
-sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.home__data, .about__img, .section-title', { interval: 100 });
+sr.reveal('.about__text, .experience__card, .award__card, .cert-card', { delay: 400, interval: 100 });
+sr.reveal('.home__social-icon', { interval: 200 });
+sr.reveal('.skills__data, .project__card, .contact__box, .contact__form', { interval: 200 });
 
-
-
+/*==================== CONTACT FORM VALIDATION ====================*/
 (function($) {
-
-	"use strict";
-
-
-  // Form
-	var contactForm = function() {
-		if ($('#contactForm').length > 0 ) {
-			$( "#contactForm" ).validate( {
-				rules: {
-					name: "required",
-					subject: "required",
-					email: {
-						required: true,
-						email: true
-					},
-					message: {
-						required: true,
-						minlength: 5
-					}
-				},
-				messages: {
-					name: "Please enter your name",
-					subject: "Please enter your subject",
-					email: "Please enter a valid email address",
-					message: "Please enter a message"
-				},
-				/* submit via ajax */
-				
-				submitHandler: function(form) {		
-					var $submit = $('.submitting'),
-						waitText = 'Submitting...';
-
-					$.ajax({   	
-				      type: "POST",
-				      url: "php/sendEmail.php",
-				      data: $(form).serialize(),
-
-				      beforeSend: function() { 
-				      	$submit.css('display', 'block').text(waitText);
-				      },
-				      success: function(msg) {
-		               if (msg == 'OK') {
-		               	$('#form-message-warning').hide();
-				            setTimeout(function(){
-		               		$('#contactForm').fadeIn();
-		               	}, 1000);
-				            setTimeout(function(){
-				               $('#form-message-success').fadeIn();   
-		               	}, 1400);
-
-		               	setTimeout(function(){
-				               $('#form-message-success').fadeOut();   
-		               	}, 8000);
-
-		               	setTimeout(function(){
-				               $submit.css('display', 'none').text(waitText);  
-		               	}, 1400);
-
-		               	setTimeout(function(){
-		               		$( '#contactForm' ).each(function(){
-											    this.reset();
-											});
-		               	}, 1400);
-			               
-			            } else {
-			               $('#form-message-warning').html(msg);
-				            $('#form-message-warning').fadeIn();
-				            $submit.css('display', 'none');
-			            }
-				      },
-				      error: function() {
-				      	$('#form-message-warning').html("Something went wrong. Please try again.");
-				         $('#form-message-warning').fadeIn();
-				         $submit.css('display', 'none');
-				      }
-			      });    		
-		  		} // end submitHandler
-
-			});
-		}
-	};
-	contactForm();
-
+    "use strict";
+    if ($('#contactForm').length > 0) {
+        $("#contactForm").validate({
+            rules: {
+                name: "required",
+                subject: "required",
+                email: { required: true, email: true },
+                message: { required: true, minlength: 5 }
+            },
+            submitHandler: function(form) {
+                const $submit = $('.submitting'),
+                      waitText = 'Sending...';
+                $.ajax({
+                    type: "POST",
+                    url: "php/sendEmail.php",
+                    data: $(form).serialize(),
+                    beforeSend: function() {
+                        $submit.css('display', 'block').text(waitText);
+                    },
+                    success: function(msg) {
+                        if (msg == 'OK') {
+                            alert("Message Sent Successfully!");
+                            form.reset();
+                            $submit.css('display', 'none');
+                        } else {
+                            alert("Error: " + msg);
+                            $submit.css('display', 'none');
+                        }
+                    }
+                });
+            }
+        });
+    }
 })(jQuery);
