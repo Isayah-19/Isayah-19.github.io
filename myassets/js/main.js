@@ -86,6 +86,38 @@ let swiperProjects = new Swiper(".projects__container", {
     },
 });
 
+/*==================== CERTIFICATION SLIDER ====================*/
+let swiperCert = new Swiper("#cert-swiper", {
+    loop: true,
+    spaceBetween: 24,
+    grabCursor: true,
+
+    pagination: {
+        el: ".cert-pagination",
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: ".cert-next",
+        prevEl: ".cert-prev",
+    },
+
+    breakpoints: {
+        // 1 badge on small phones
+        320: {
+            slidesPerView: 1,
+        },
+        // 2 badges on tablets
+        768: {
+            slidesPerView: 2,
+        },
+        // 3 badges on desktop
+        1024: {
+            slidesPerView: 3,
+        },
+    },
+});
+
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
     origin: 'top',
