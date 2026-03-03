@@ -175,6 +175,37 @@ img { max-width: 100%; height: auto; display: block; }
 .cert-card img { width: 100px; margin: 0 auto 1rem; border-radius: 50%; }
 .cert-name { font-size: 1.1rem; color: var(--second-color); }
 .cert-date { font-size: var(--smaller-font-size); color: #888; }
+/*===== CERTIFICATIONS SLIDER FIX =====*/
+.certifications__container {
+    padding: 1rem 0 4rem; /* Padding for dots at bottom */
+    overflow: hidden;
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+/* Ensure cards take full width of the slide */
+.certifications__container .swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 15px; /* Room for card shadows */
+}
+.cert-card {
+    width: 100%;
+    margin: 0; /* Let swiper handle spacing */
+}
+/* Styling the Arrows to match your theme */
+.cert-next, .cert-prev {
+    color: var(--first-color) !important;
+    background: #fff;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.cert-next::after, .cert-prev::after {
+    font-size: 1.2rem !important;
+}
 
 /* Experience Specific */
 .experience__description {
