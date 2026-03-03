@@ -111,6 +111,16 @@ img { max-width: 100%; height: auto; display: block; }
 .home { height: calc(100vh - var(--header-height)); align-content: center; }
 .home__title { font-size: 2.5rem; margin-bottom: var(--mb-4); color: var(--second-color); }
 .home__title-color { color: var(--first-color); }
+/*===== HOME TYPOGRAPHY ENHANCEMENTS =====*/
+.home__subtitle {font-size: 1.5rem; font-weight: 600; color: var(--second-color); margin-bottom: var(--mb-2);}
+.home__description { max-width: 500px; font-size: var(--normal-font-size); color: var(--text-color); line-height: 1.6; margin-bottom: var(--mb-4);}
+/* On desktop, center the description if your home layout is centered */
+@media screen and (min-width: 768px) {
+    .home__description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 .home__social { display: flex; gap: 1.5rem; margin-top: 2rem; }
 .home__social-icon { font-size: 1.5rem; color: var(--first-color); }
 .home__social-icon:hover { transform: translateY(-3px); }
