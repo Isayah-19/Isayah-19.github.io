@@ -88,36 +88,39 @@ let swiperProjects = new Swiper(".projects__container", {
 
 /*==================== CERTIFICATION SLIDER ====================*/
 let swiperCert = new Swiper("#cert-swiper", {
+    slidesPerView: 1, // Default for mobile
+    spaceBetween: 20,
     loop: true,
-    spaceBetween: 24,
     grabCursor: true,
+    centeredSlides: false, // Ensure they align to the left/center properly
 
-    pagination: {
-        el: ".cert-pagination",
-        clickable: true,
-    },
+    // Fixes initialization issues
+    observer: true,
+    observeParents: true,
 
     navigation: {
         nextEl: ".cert-next",
         prevEl: ".cert-prev",
     },
+    
+    pagination: {
+        el: ".cert-pagination",
+        clickable: true,
+    },
 
     breakpoints: {
-        // 1 badge on small phones
-        320: {
-            slidesPerView: 1,
-        },
-        // 2 badges on tablets
+        // Screen width >= 768px (Tablet)
         768: {
             slidesPerView: 2,
+            spaceBetween: 25,
         },
-        // 3 badges on desktop
+        // Screen width >= 1024px (Desktop)
         1024: {
             slidesPerView: 3,
+            spaceBetween: 30,
         },
     },
 });
-
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
     origin: 'top',
