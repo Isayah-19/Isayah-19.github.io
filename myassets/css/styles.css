@@ -175,36 +175,34 @@ img { max-width: 100%; height: auto; display: block; }
 .cert-card img { width: 100px; margin: 0 auto 1rem; border-radius: 50%; }
 .cert-name { font-size: 1.1rem; color: var(--second-color); }
 .cert-date { font-size: var(--smaller-font-size); color: #888; }
-/*===== CERTIFICATIONS SLIDER FIX =====*/
+/* Constraint for the whole slider */
 .certifications__container {
-    padding: 1rem 0 4rem; /* Padding for dots at bottom */
-    overflow: hidden;
-    position: relative;
-    max-width: 1024px;
+    max-width: 1024px; /* Matches your site width */
     margin: 0 auto;
+    padding: 2rem 50px; /* Space on sides so arrows don't overlap cards */
+    overflow: hidden;
 }
-/* Ensure cards take full width of the slide */
+
+/* Force Swiper to allow multiple slides */
+.certifications__container .swiper-wrapper {
+    display: flex;
+}
+
 .certifications__container .swiper-slide {
-    height: auto;
+    width: auto; /* Let JS calculate width based on slidesPerView */
     display: flex;
     justify-content: center;
-    padding: 15px; /* Room for card shadows */
+    height: auto;
 }
+
+/* Ensure the card itself doesn't grow too large */
 .cert-card {
     width: 100%;
-    margin: 0; /* Let swiper handle spacing */
-}
-/* Styling the Arrows to match your theme */
-.cert-next, .cert-prev {
-    color: var(--first-color) !important;
-    background: #fff;
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.cert-next::after, .cert-prev::after {
-    font-size: 1.2rem !important;
+    max-width: 300px; /* Limits size so 3 can fit */
+    background-color: var(--container-bg);
+    padding: 1.5rem;
+    border-radius: .75rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 /* Experience Specific */
